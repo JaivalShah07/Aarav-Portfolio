@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0B0D0E;
+  --surface: #121618;
+  --foreground: #E8E7E1;
+  --secondary: #929995;
+  --border: #29302F;
+  --accent-gold: #C4A46A;
+  --accent-terminal: #75D6B0;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-terminal: var(--accent-terminal);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100%;
+}
+
+/* Subtle architectural coordinate grid background */
+.technical-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(41, 48, 47, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 48, 47, 0.3) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.technical-grid-major {
+  background-image: 
+    linear-gradient(to right, rgba(41, 48, 47, 0.8) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 48, 47, 0.6) 1px, transparent 1px);
+  background-size: 160px 160px;
+}
+
+/* Edge vignette mask */
+.radial-vignette {
+  mask-image: radial-gradient(circle at 50% 40%, black 35%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 35%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+}
+
+/* Custom focus ring */
+*:focus-visible {
+  outline: 1px solid var(--accent-terminal);
+  outline-offset: 2px;
+}
+
+/* Reduced motion adjustments */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "scanned": "2026-11-19T12:38:00+05:30",
+  "findings": {
+    "fonts": "Newsreader serif + Geist sans + Geist mono (app/layout.tsx:2-22)",
+    "palette": "Dark midnight palette with warm grey and gold accents (app/globals.css:4-11)",
+    "motion": "Canvas GenerativeLinefield with reduced-motion fallback (components/hero/GenerativeLinefield.tsx:34)",
+    "spacing": "Tailwind CSS v4 default scale",
+    "framework": "Next.js 16.4.3 (app router) + React 19"
+  },
+  "preserve": [
+    "Aarav Vyas / MIDNIGHT BUILD identity and core proposition",
+    "Midnight palette foundation (#0B0D0E, #121618, #E8E7E1, #929995, #C4A46A)",
+    "Serif + sans + mono typography pairing",
+    "Section anchors and links (#work, #about, #contact, /)"
+  ],
+  "introduce": [
+    "Real crafted sections for Work, About, and Contact replacing empty sr-only stubs",
+    "Tokens system in tokens.css and base.css adhering strictly to Hallmark Floor",
+    "Clean Hallmark stamp and removal of all 26+ Floor failures",
+    "Proper dvh viewport handling, overflow-x: clip, instant focus-visible, and untracked labels"
+  ]
+}
