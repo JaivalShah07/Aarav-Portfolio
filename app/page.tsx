@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B0D0E] text-[#E8E7E1]">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Navbar />
       <main className="flex-1 flex flex-col">
         <HeroSection />

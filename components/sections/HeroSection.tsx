@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { GenerativeLinefield } from "@/components/hero/GenerativeLinefield";
 
@@ -5,54 +6,96 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative w-full min-h-[calc(100vh-3.5rem)] flex items-center justify-center overflow-hidden py-16 sm:py-24"
+      className="relative w-full min-h-dvh flex items-center justify-center overflow-hidden py-16 pb-36 sm:py-24"
     >
-      {/* Signature Living Background: Continuous generative field of fine lines */}
+      {/* Signature Living Background */}
       <GenerativeLinefield />
 
       {/* Hero Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 sm:px-10 lg:px-12">
-        <div className="flex flex-col items-start max-w-3xl">
-          {/* Developer's Full Name as Single Semantic H1 Centerpiece */}
+        <div className="flex flex-col items-start max-w-4xl">
+          {/* Developer's Full Name */}
           <h1
             id="hero-heading"
-            className="tracking-tight leading-[0.98] select-none text-[#E8E7E1]"
+            className="text-6xl sm:text-8xl lg:text-[8.5rem] font-bold tracking-tight leading-[0.98] select-none text-foreground"
           >
-            <span className="block text-6xl sm:text-8xl lg:text-[8.5rem] font-bold tracking-tight">
-              Aarav Vyas
-            </span>
-            <span className="block text-5xl sm:text-7xl lg:text-[4.5rem] font-light italic font-serif text-[#929995] mt-1 sm:mt-2">
-              I make ideas work on the web<span className="text-[#C4A46A] not-italic font-sans font-normal ml-1">.</span>
-            </span>
+            Aarav Vyas
           </h1>
 
-          {/* Natural, honest developer introduction
-          <p className="mt-8 sm:mt-10 text-lg sm:text-xl text-[#929995] leading-relaxed max-w-xl font-normal">
-            Creative developer exploring the space between useful software,
-            thoughtful interfaces, and systems that work.
-          </p> */}
+          {/* Subheading */}
+          <p className="text-5xl sm:text-7xl lg:text-[4.5rem] font-light italic font-serif text-secondary mt-1 sm:mt-1.5 leading-[1.05]">
+            I make ideas work on the web
+            <span className="text-accent-gold not-italic font-sans font-normal ml-1">
+              .
+            </span>
+          </p>
 
-          {/* Understated actions with clear visual rhythm */}
+          {/* Hero Actions */}
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-5 sm:gap-6">
             <Link
               href="#work"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-[#0B0D0E] bg-[#E8E7E1] px-6 py-3 rounded-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8E7E1]"
+              className="group inline-flex items-center gap-2.5 text-sm font-medium text-background bg-foreground px-6 py-3 rounded-sm transition-colors duration-150 hover:bg-foreground/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
             >
-              <span>Explore my work</span>
-              <span
-                className="transition-transform duration-150 group-hover:translate-x-0.5"
+              <span>Explore work</span>
+              <svg
+                className="w-4 h-4 transition-transform duration-150 ease-out group-hover:translate-x-1"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 aria-hidden="true"
               >
-                →
-              </span>
+                <path d="M3.333 8h9.334M8.667 4l4 4-4 4" />
+              </svg>
             </Link>
 
             <Link
               href="#contact"
-              className="inline-flex items-center text-sm font-medium text-[#929995] hover:text-[#E8E7E1] px-4 py-3 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#929995]"
+              className="inline-flex items-center text-sm font-medium text-secondary hover:text-foreground px-4 py-3 transition-colors duration-150 active:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
             >
               Get in touch
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Information Strip */}
+      <div className="absolute bottom-0 left-0 w-full z-10 px-6 sm:px-10 lg:px-12 pb-7 sm:pb-9">
+        <div className="w-full mx-auto border-t border-border/50 pt-5 sm:pt-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-8">
+
+            {/* Interests - Left */}
+            <div className="flex flex-col gap-2">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
+                Interests
+              </span>
+              <span className="text-[11px] sm:text-sm text-secondary leading-relaxed">
+                Technology  ·  Design  ·  Innovation
+              </span>
+            </div>
+
+            {/* Location - Center */}
+            <div className="flex flex-col gap-2 items-center text-center">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
+                Location
+              </span>
+              <span className="text-[11px] sm:text-sm text-secondary">
+                India
+              </span>
+            </div>
+
+            {/* In Progress - Right */}
+            <div className="flex flex-col gap-2 items-end text-right">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
+                In Progress
+              </span>
+              <span className="text-[11px] sm:text-sm text-secondary leading-relaxed">
+                Expanding Skillset
+              </span>
+            </div>
+
           </div>
         </div>
       </div>

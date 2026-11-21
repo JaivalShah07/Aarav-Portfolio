@@ -229,8 +229,8 @@ export function GenerativeLinefield() {
     >
       <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full" />
       {/* Top & bottom gentle gradient falloffs to maintain seamless edge readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D0E] via-transparent to-[#0B0D0E]/60 pointer-events-none" />
-      <div className="absolute inset-0 bg-radial-[circle_at_50%_45%] from-transparent via-[#0B0D0E]/40 to-[#0B0D0E] pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-radial-[circle_at_50%_45%] from-transparent via-background/40 to-background pointer-events-none" />
     </div>
   );
 }

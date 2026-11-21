@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${editorialSerif.variable} h-full dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#0B0D0E] text-[#E8E7E1] antialiased selection:bg-[#75D6B0]/20 selection:text-[#75D6B0]">
+      <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-accent-terminal/20 selection:text-accent-terminal">
         {children}
       </body>
     </html>

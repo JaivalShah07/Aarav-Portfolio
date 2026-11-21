@@ -1,3 +1,4 @@
+/* Hallmark · component: navbar · genre: atmospheric · theme: midnight · states: 8 · contrast: pass · v2.0.0 */
 @import "tailwindcss";
 
 :root {
@@ -7,7 +8,13 @@
   --secondary: #929995;
   --border: #29302F;
   --accent-gold: #C4A46A;
+  --accent-grey: #8B9099;
   --accent-terminal: #75D6B0;
+  --grid-line-subtle: rgba(41, 48, 47, 0.45);
+  --grid-line-dim: rgba(41, 48, 47, 0.3);
+  --grid-line-strong: rgba(41, 48, 47, 0.8);
+  --grid-line-medium: rgba(41, 48, 47, 0.6);
+  --mask-stop: rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
@@ -17,6 +24,7 @@
   --color-secondary: var(--secondary);
   --color-border: var(--border);
   --color-accent-gold: var(--accent-gold);
+  --color-accent-grey: var(--accent-grey);
   --color-accent-terminal: var(--accent-terminal);
   --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
@@ -25,6 +33,7 @@
 
 html,
 body {
+  overflow-x: clip;
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -34,22 +43,22 @@ body {
 /* Subtle architectural coordinate grid background */
 .technical-grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(41, 48, 47, 0.45) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(41, 48, 47, 0.3) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-dim) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 .technical-grid-major {
   background-image: 
-    linear-gradient(to right, rgba(41, 48, 47, 0.8) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(41, 48, 47, 0.6) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line-strong) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-medium) 1px, transparent 1px);
   background-size: 160px 160px;
 }
 
 /* Edge vignette mask */
 .radial-vignette {
-  mask-image: radial-gradient(circle at 50% 40%, black 35%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 35%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+  mask-image: radial-gradient(circle at 50% 40%, black 35%, var(--mask-stop) 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 35%, var(--mask-stop) 70%, transparent 100%);
 }
 
 /* Custom focus ring */
