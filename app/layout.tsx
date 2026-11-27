@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Aarav — Creative Developer / MIDNIGHT BUILD",
   description: "Personal developer studio exploring useful software, thoughtful interfaces, and reliable systems.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +50,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${editorialSerif.variable} h-full dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground antialiased selection:bg-accent-terminal/20 selection:text-accent-terminal">
+        <SmoothScroll />
         {children}
       </body>
     </html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="tileBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D4544"/>
+      <stop offset="100%" stop-color="#1E2322"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Obsidian Tile -->
+  <rect width="32" height="32" rx="7.5" fill="#0B0D0E"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.75" fill="none" stroke="url(#tileBorder)" stroke-width="1.5"/>
+
+  <!-- "A" Letterform -->
+  <path d="M5.25 22.5 L9.75 9.5 L14.25 22.5" fill="none" stroke="#E8E7E1" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="7.0" y1="17.75" x2="12.5" y2="17.75" stroke="#E8E7E1" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- "V" Letterform -->
+  <path d="M15.25 9.5 L19.75 22.5 L24.25 9.5" fill="none" stroke="#E8E7E1" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Signature Gold Dot -->
+  <circle cx="27.2" cy="22.0" r="1.3" fill="#C4A46A"/>
+</svg>

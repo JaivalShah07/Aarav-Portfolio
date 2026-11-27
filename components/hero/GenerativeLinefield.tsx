@@ -19,7 +19,6 @@ export function GenerativeLinefield() {
     let height = 0;
     let dpr = 1;
 
-    // Pointer tracking with smooth damping
     const pointer = {
       x: -2000,
       y: -2000,
@@ -28,7 +27,6 @@ export function GenerativeLinefield() {
       active: false,
     };
 
-    // State flags
     let isTabVisible = !document.hidden;
     let isIntersecting = true;
     let isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -111,7 +109,6 @@ export function GenerativeLinefield() {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
 
-      // Line field density: adapt gracefully by height
       const lineCount = Math.floor(Math.max(28, Math.min(52, height / 18)));
       const stepY = height / (lineCount - 1);
       const pointsPerLine = Math.floor(Math.max(30, Math.min(80, width / 20)));
@@ -128,7 +125,6 @@ export function GenerativeLinefield() {
         const baseY = i * stepY;
         const normY = i / lineCount;
 
-        // Depth & opacity curve: subtlest near top and bottom, clearest in mid-lower
         const baseAlpha = 0.08 + Math.sin(normY * Math.PI) * 0.12;
 
         ctx.beginPath();
@@ -138,12 +134,10 @@ export function GenerativeLinefield() {
           let y = baseY;
 
           if (!staticMode) {
-            // Natural harmonic wave drift (very slow, calm)
             const wave1 = Math.sin(baseX * 0.003 + currentTime * 0.5 + i * 0.18) * 7;
             const wave2 = Math.cos(baseX * 0.007 - currentTime * 0.35 + i * 0.22) * 4;
             y += wave1 + wave2;
 
-            // Interactive displacement around pointer
             if (pointer.active || (pX > -100 && pY > -100)) {
               const dx = baseX - pX;
               const dy = y - pY;
@@ -152,9 +146,7 @@ export function GenerativeLinefield() {
               if (distSq < influenceSq && distSq > 0) {
                 const dist = Math.sqrt(distSq);
                 const force = (1 - dist / influenceRadius);
-                // Displace vertically with smooth cosine envelope
                 const displacement = Math.sin(force * Math.PI) * 36;
-                // If above cursor, push up; if below, push down
                 y += (dy >= 0 ? 1 : -1) * displacement;
               }
             }
@@ -167,8 +159,6 @@ export function GenerativeLinefield() {
           }
         }
 
-        // Draw line with curated stroke
-        // Slightly warmer tone on every 6th line for editorial texture
         const isAccentLine = i % 7 === 0;
         if (isAccentLine) {
           ctx.strokeStyle = `rgba(196, 164, 106, ${baseAlpha * 0.85})`;
@@ -193,7 +183,6 @@ export function GenerativeLinefield() {
         return;
       }
 
-      // Smooth pointer lag for organic elasticity
       pointer.x += (pointer.targetX - pointer.x) * 0.08;
       pointer.y += (pointer.targetY - pointer.y) * 0.08;
 
@@ -228,7 +217,6 @@ export function GenerativeLinefield() {
       aria-hidden="true"
     >
       <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full" />
-      {/* Top & bottom gentle gradient falloffs to maintain seamless edge readability */}
       <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/60 pointer-events-none" />
       <div className="absolute inset-0 bg-radial-[circle_at_50%_45%] from-transparent via-background/40 to-background pointer-events-none" />
     </div>

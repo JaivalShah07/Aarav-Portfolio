@@ -12,7 +12,6 @@ export function Navbar({ className = "" }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("#home");
 
-  // Track active navigation section
   useEffect(() => {
     const updateActiveLink = () => {
       setActiveHref(window.location.hash || "#home");
@@ -27,7 +26,6 @@ export function Navbar({ className = "" }: NavbarProps) {
     };
   }, []);
 
-  // Handle Escape key and body scroll lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -57,11 +55,9 @@ export function Navbar({ className = "" }: NavbarProps) {
 
   return (
     <>
-      {/* Floating Minimal Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-40 px-6 sm:px-15 lg:px-30 py-5 lg:py-10 flex items-center justify-between pointer-events-none transition-opacity duration-200 ${className}`}
       >
-        {/* Wordmark */}
         <Link
           href="/"
           className="pointer-events-auto text-2xl font-sans transition-colors duration-500 hover:text-accent-grey active:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent-terminal rounded-sm py-1 px-1.5"
@@ -73,7 +69,6 @@ export function Navbar({ className = "" }: NavbarProps) {
           </span>
         </Link>
 
-        {/* Hamburger Menu Button */}
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -113,7 +108,6 @@ export function Navbar({ className = "" }: NavbarProps) {
         </button>
       </header>
 
-      {/* Full-Screen Sliding Navigation Overlay */}
       <div
         id="fullscreen-navigation-menu"
         role="dialog"
@@ -132,7 +126,6 @@ export function Navbar({ className = "" }: NavbarProps) {
               : "translate-x-full pointer-events-none"
           }`}
       >
-        {/* Close Button */}
         <div className="absolute top-6 right-10 sm:top-10 sm:right-14 lg:top-16 lg:right-20">
           <button
             type="button"
@@ -164,7 +157,6 @@ export function Navbar({ className = "" }: NavbarProps) {
           </button>
         </div>
 
-        {/* Navigation Links */}
         <div className="w-full max-w-6xl mx-auto my-auto py-12">
           <nav aria-label="Overlay Navigation">
             <ul className="flex flex-col gap-6 sm:gap-2">
@@ -197,7 +189,6 @@ export function Navbar({ className = "" }: NavbarProps) {
                           : `${(3 - index) * 50}ms`,
                       }}
                     >
-                      {/* Navigation Label */}
                       <span
                         className={`relative font-roboto text-4xl sm:text-6xl lg:text-7xl
                           tracking-tight leading-none
@@ -219,7 +210,6 @@ export function Navbar({ className = "" }: NavbarProps) {
                         {item.label}
                       </span>
 
-                      {/* Continuous Arrow */}
                       <span
                         className="inline-flex items-center
                           w-0 opacity-0 overflow-hidden
@@ -243,7 +233,6 @@ export function Navbar({ className = "" }: NavbarProps) {
           </nav>
         </div>
 
-        {/* Overlay Footer */}
         <div
           className="w-full max-w-6xl mx-auto pt-6
             border-t border-border/40

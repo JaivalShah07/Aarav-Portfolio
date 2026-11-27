@@ -1,5 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { HeroSection } from "@/components/sections/HeroSection";
+
+import { ScrollingMarquee } from "@/components/sections/ScrollingMarquee";
 
 export default function Home() {
   return (
@@ -7,8 +10,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1 flex flex-col">
         <HeroSection />
+        <ScrollingMarquee />
+        <AboutSection />
 
-        {/* Anchor destinations for work, about, and contact */}
         <section id="work" className="sr-only">
           <h2>Work</h2>
         </section>

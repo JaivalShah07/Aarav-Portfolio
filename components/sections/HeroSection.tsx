@@ -8,13 +8,10 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative w-full min-h-dvh flex items-center justify-center overflow-hidden py-16 pb-36 sm:py-24"
     >
-      {/* Signature Living Background */}
       <GenerativeLinefield />
 
-      {/* Hero Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 sm:px-10 lg:px-12">
         <div className="flex flex-col items-start max-w-4xl">
-          {/* Developer's Full Name */}
           <h1
             id="hero-heading"
             className="text-6xl sm:text-8xl lg:text-[8.5rem] font-bold tracking-tight leading-[0.98] select-none text-foreground"
@@ -22,7 +19,6 @@ export function HeroSection() {
             Aarav Vyas
           </h1>
 
-          {/* Subheading */}
           <p className="text-5xl sm:text-7xl lg:text-[4.5rem] font-light italic font-serif text-secondary mt-1 sm:mt-1.5 leading-[1.05]">
             I make ideas work on the web
             <span className="text-accent-gold not-italic font-sans font-normal ml-1">
@@ -30,7 +26,6 @@ export function HeroSection() {
             </span>
           </p>
 
-          {/* Hero Actions */}
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center gap-5 sm:gap-6">
             <Link
               href="#work"
@@ -52,7 +47,7 @@ export function HeroSection() {
             </Link>
 
             <Link
-              href="#contact"
+              href="#home"
               className="inline-flex items-center text-sm font-medium text-secondary hover:text-foreground px-4 py-3 transition-colors duration-150 active:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary"
             >
               Get in touch
@@ -61,12 +56,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom Information Strip */}
       <div className="absolute bottom-0 left-0 w-full z-10 px-6 sm:px-10 lg:px-12 pb-7 sm:pb-9">
         <div className="w-full mx-auto border-t border-border/50 pt-5 sm:pt-6">
           <div className="grid grid-cols-3 gap-3 sm:gap-8">
-
-            {/* Interests - Left */}
             <div className="flex flex-col gap-2">
               <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
                 Interests
@@ -76,7 +68,6 @@ export function HeroSection() {
               </span>
             </div>
 
-            {/* Location - Center */}
             <div className="flex flex-col gap-2 items-center text-center">
               <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
                 Location
@@ -86,7 +77,6 @@ export function HeroSection() {
               </span>
             </div>
 
-            {/* In Progress - Right */}
             <div className="flex flex-col gap-2 items-end text-right">
               <span className="text-[9px] sm:text-[10px] tracking-[0.18em] font-medium text-secondary/60 uppercase">
                 In Progress
@@ -95,7 +85,6 @@ export function HeroSection() {
                 Expanding Skillset
               </span>
             </div>
-
           </div>
         </div>
       </div>
