@@ -38,14 +38,14 @@ export function AboutSection() {
 
                         <div className="mt-8 max-w-xl space-y-5">
                             <p className="text-base sm:text-[17px] leading-[1.85] text-secondary">
-                                I'm Aarav, a developer interested in the intersection
+                                I&apos;m Aarav, a developer interested in the intersection
                                 of technology, design, and problem-solving. I enjoy
                                 turning ideas into meaningful digital experiences.
                             </p>
 
                             <p className="text-base sm:text-[17px] leading-[1.85] text-secondary">
                                 Currently exploring full-stack development and
-                                artificial intelligence, I'm always experimenting
+                                artificial intelligence, I&apos;m always experimenting
                                 with new technologies and finding opportunities
                                 to learn through building.
                             </p>
@@ -107,7 +107,7 @@ export function AboutSection() {
                 {/* Bottom statement */}
                 <div className="mt-28 sm:mt-36 border-t border-border/50 pt-8 flex flex-col sm:flex-row justify-between gap-4">
                     <span className="text-[11px] tracking-[0.18em] uppercase text-secondary/50">
-                        Always exploring what's next
+                        Always exploring what&apos;s next
                     </span>
 
                     <span className="text-sm text-secondary">
